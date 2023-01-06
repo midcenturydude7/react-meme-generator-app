@@ -1,0 +1,82 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === GENERAL STYLES */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* === HEADER STYLES */
+.header--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #672280 1.18%, #A626D3 96.91%);
+  padding: 2em 2.25em;
+  color: #FFF;
+}
+
+.header--logo__container {
+  display: flex;
+  align-items: center;
+}
+
+.header--logo-img {
+  width: 50px;
+}
+
+.header--logo-title {
+  font-size: 2.25rem;
+  margin-left: .25em;
+}
+
+.header--course-info {
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.meme--container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5em 3em;
+}
+
+.meme--form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25em;
+}
+
+.meme--form-input {
+  border: 2px solid #D5D4D8;
+  border-radius: 5px;
+  padding: .8em;
+}
+
+input[type=text] {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.meme--form-btn {
+  grid-column: 1 / -1;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  border: none;
+  border-radius: 5px;
+  padding: .9em;
+  font-size: 1.4rem;
+  color: #FFF;
+  cursor: pointer;
+}
