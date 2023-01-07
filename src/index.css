@@ -80,3 +80,11 @@ input[type=text] {
   color: #FFF;
   cursor: pointer;
 }
+
+.meme--img-container {
+  grid-column: 1 / -1;
+}
+
+.meme--img {
+  width: 100%;
+}

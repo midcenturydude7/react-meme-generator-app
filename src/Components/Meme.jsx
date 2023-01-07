@@ -3,11 +3,12 @@ import memesData from "../Data/memesData";
 
 export default function Meme() {
 
+  const [memeImg, setMemeImg] = React.useState("");
+
   function getMemeImg() {
     const memesArray = memesData.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    const url = memesArray[randomNumber].url;
-    console.log(url);
+    setMemeImg(memesArray[randomNumber].url);
   }
 
   return (
@@ -26,6 +27,9 @@ export default function Meme() {
         <button className="meme--form-btn" onClick={getMemeImg}>
           Get a new meme image 🖼
         </button>
+        <div className="meme--img-container">
+          <img src={memeImg} alt="Dynamically Generated Meme Image" className="meme--img" />
+        </div>
       </div>
     </main>
   );
