@@ -3,12 +3,24 @@ import memesData from "../Data/memesData";
 
 export default function Meme() {
 
-  const [memeImg, setMemeImg] = React.useState("");
+  const [meme, setMeme] = React.useState({
+    topText: "", 
+    bottomText: "",
+    randomImg: "http://i.imgflip.com/1bij.jpg"
+  });
+
+  const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+
+  // const [memeImg, setMemeImg] = React.useState("http://i.imgflip.com/1bij.jpg");
 
   function getMemeImg() {
-    const memesArray = memesData.data.memes;
+    const memesArray = allMemeImages.data.memes;
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    setMemeImg(memesArray[randomNumber].url);
+    const url = memesArray[randomNumber].url;
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      randomImg: url
+    }));
   }
 
   return (
@@ -28,7 +40,7 @@ export default function Meme() {
           Get a new meme image 🖼
         </button>
         <div className="meme--img-container">
-          <img src={memeImg} alt="Dynamically Generated Meme Image" className="meme--img" />
+          <img src={meme.randomImg} alt="Dynamically Generated Meme Image" className="meme--img" />
         </div>
       </div>
     </main>
